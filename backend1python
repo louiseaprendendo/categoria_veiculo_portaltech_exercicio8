@@ -1,0 +1,21 @@
+# Solicita ao usuário as informações do veículo
+qtd_rodas = int(input("Quantidade de rodas do veículo: "))
+peso = float(input("Peso bruto do veículo (em kg): "))
+qtd_pessoas = int(input("Quantidade de pessoas no veículo: "))
+
+# Verifica a categoria de habilitação
+if qtd_rodas == 2 or qtd_rodas == 3:
+    categoria = "A"
+elif qtd_rodas == 4 and peso <= 3500 and qtd_pessoas <= 8:
+    categoria = "B"
+elif qtd_rodas >= 4 and peso > 3500 and peso <= 6000:
+    categoria = "C"
+elif qtd_rodas >= 4 and qtd_pessoas > 8:
+    categoria = "D"
+elif qtd_rodas >= 4 and peso > 6000:
+    categoria = "E"
+else:
+    categoria = "Não foi possível identificar a categoria de habilitação."
+
+# Exibe a categoria de habilitação correspondente
+print("Categoria de habilitação: " + categoria)
